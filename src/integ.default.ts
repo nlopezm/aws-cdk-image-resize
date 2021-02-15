@@ -1,13 +1,13 @@
 import { App, RemovalPolicy, Stack } from '@aws-cdk/core';
-import { ImageEnhancer } from './index';
+import { ImageResize } from './index';
 
 const app = new App();
-const stack = new Stack(app, 'ImageEnhancerStack');
+const stack = new Stack(app, 'ImageResizeStack');
 
-new ImageEnhancer(stack, 'ImageEnhancerLib', {
+new ImageResize(stack, 'ImageResizeLib', {
   s3BucketProps: {
     autoDeleteObjects: true,
-    bucketName: 'image-enhancer-lib-test',
+    bucketName: 'image-resize-lib-test',
     removalPolicy: RemovalPolicy.DESTROY,
   },
   cloudfrontDistributionProps: {

@@ -5,8 +5,8 @@ const project = new AwsCdkConstructLibrary({
   cdkVersion: '1.73.0',
   defaultReleaseBranch: 'main',
   jsiiFqn: 'projen.AwsCdkConstructLibrary',
-  name: 'aws-cdk-image-enhancer',
-  repositoryUrl: 'https://github.com/nlopezm/aws-cdk-image-enhancer.git',
+  name: 'aws-cdk-image-resize',
+  repositoryUrl: 'https://github.com/nlopezm/aws-cdk-image-resize.git',
   cdkDependencies: [
     '@aws-cdk/aws-cloudfront-origins',
     '@aws-cdk/aws-certificatemanager',

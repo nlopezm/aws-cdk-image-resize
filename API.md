@@ -4,26 +4,26 @@
 
 Name|Description
 ----|-----------
-[ImageEnhancer](#aws-cdk-image-enhancer-imageenhancer)|*No description*
+[ImageResize](#aws-cdk-image-resize-imageresize)|*No description*
 
 
 **Structs**
 
 Name|Description
 ----|-----------
-[DistributionProps](#aws-cdk-image-enhancer-distributionprops)|Properties for a Distribution.
-[FunctionProps](#aws-cdk-image-enhancer-functionprops)|*No description*
+[DistributionProps](#aws-cdk-image-resize-distributionprops)|Properties for a Distribution.
+[FunctionProps](#aws-cdk-image-resize-functionprops)|*No description*
 
 
 **Interfaces**
 
 Name|Description
 ----|-----------
-[IImageEnhancerProps](#aws-cdk-image-enhancer-iimageenhancerprops)|*No description*
+[IImageResizeProps](#aws-cdk-image-resize-iimageresizeprops)|*No description*
 
 
 
-## class ImageEnhancer  <a id="aws-cdk-image-enhancer-imageenhancer"></a>
+## class ImageResize  <a id="aws-cdk-image-resize-imageresize"></a>
 
 
 
@@ -36,17 +36,17 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 
 
 ```ts
-new ImageEnhancer(scope: Construct, id: string, props?: IImageEnhancerProps)
+new ImageResize(scope: Construct, id: string, props?: IImageResizeProps)
 ```
 
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
-* **props** (<code>[IImageEnhancerProps](#aws-cdk-image-enhancer-iimageenhancerprops)</code>)  *No description*
+* **props** (<code>[IImageResizeProps](#aws-cdk-image-resize-iimageresizeprops)</code>)  *No description*
 
 
 
 
-## struct DistributionProps  <a id="aws-cdk-image-enhancer-distributionprops"></a>
+## struct DistributionProps  <a id="aws-cdk-image-resize-distributionprops"></a>
 
 
 Properties for a Distribution.
@@ -76,7 +76,7 @@ Name | Type | Description
 
 
 
-## struct FunctionProps  <a id="aws-cdk-image-enhancer-functionprops"></a>
+## struct FunctionProps  <a id="aws-cdk-image-resize-functionprops"></a>
 
 
 
@@ -122,7 +122,7 @@ Name | Type | Description
 
 
 
-## interface IImageEnhancerProps  <a id="aws-cdk-image-enhancer-iimageenhancerprops"></a>
+## interface IImageResizeProps  <a id="aws-cdk-image-resize-iimageresizeprops"></a>
 
 
 
@@ -132,10 +132,10 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cloudfrontDistributionProps**? | <code>[DistributionProps](#aws-cdk-image-enhancer-distributionprops)</code> | __*Optional*__
-**originResponseLambdaProps**? | <code>[FunctionProps](#aws-cdk-image-enhancer-functionprops)</code> | __*Optional*__
+**cloudfrontDistributionProps**? | <code>[DistributionProps](#aws-cdk-image-resize-distributionprops)</code> | __*Optional*__
+**originResponseLambdaProps**? | <code>[FunctionProps](#aws-cdk-image-resize-functionprops)</code> | __*Optional*__
 **s3BucketProps**? | <code>[BucketProps](#aws-cdk-aws-s3-bucketprops)</code> | __*Optional*__
-**viewerRequestLambdaProps**? | <code>[FunctionProps](#aws-cdk-image-enhancer-functionprops)</code> | __*Optional*__
+**viewerRequestLambdaProps**? | <code>[FunctionProps](#aws-cdk-image-resize-functionprops)</code> | __*Optional*__
 
 
 

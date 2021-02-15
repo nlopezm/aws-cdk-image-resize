@@ -6,15 +6,15 @@ import { Construct } from '@aws-cdk/core';
 import { DistributionProps, FunctionProps } from './types';
 export * from './types';
 
-export interface IImageEnhancerProps {
+export interface IImageResizeProps {
   cloudfrontDistributionProps?: DistributionProps;
   originResponseLambdaProps?: FunctionProps;
   s3BucketProps?: s3.BucketProps;
   viewerRequestLambdaProps?: FunctionProps;
 }
 
-export class ImageEnhancer extends Construct {
-  constructor(scope: Construct, id: string, props?: IImageEnhancerProps) {
+export class ImageResize extends Construct {
+  constructor(scope: Construct, id: string, props?: IImageResizeProps) {
     super(scope, id);
 
     const { s3BucketProps, originResponseLambdaProps, viewerRequestLambdaProps, cloudfrontDistributionProps } =
