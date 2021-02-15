@@ -9,6 +9,7 @@ const project = new AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/nlopezm/aws-cdk-image-enhancer.git',
   cdkDependencies: [
     '@aws-cdk/aws-cloudfront-origins',
+    '@aws-cdk/aws-certificatemanager',
     '@aws-cdk/aws-cloudfront',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-s3',
@@ -16,6 +17,7 @@ const project = new AwsCdkConstructLibrary({
   ],
   eslint: true,
   keywords: ['aws-cdk', 'aws', 'cdk', 'cloudfront', 'formatter', 'images', 'lambda', 'lambda@edge', 'resize'],
+  gitignore: ['cdk.out'],
 
   /* AwsCdkConstructLibraryOptions */
   // cdkAssert: true,                                                          /* Install the @aws-cdk/assert library? */
