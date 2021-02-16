@@ -1,6 +1,7 @@
 import * as cloudfront from '@aws-cdk/aws-cloudfront';
 import * as origins from '@aws-cdk/aws-cloudfront-origins';
 import * as lambda from '@aws-cdk/aws-lambda';
+import { NodejsFunction, NodejsFunctionProps } from '@aws-cdk/aws-lambda-nodejs';
 import * as s3 from '@aws-cdk/aws-s3';
 import { Construct } from '@aws-cdk/core';
 import { DistributionProps, FunctionProps } from './types';
@@ -8,7 +9,7 @@ export * from './types';
 
 export interface IImageResizeProps {
   cloudfrontDistributionProps?: DistributionProps;
-  originResponseLambdaProps?: FunctionProps;
+  originResponseLambdaProps?: NodejsFunctionProps;
   s3BucketProps?: s3.BucketProps;
   viewerRequestLambdaProps?: FunctionProps;
 }
@@ -22,10 +23,15 @@ export class ImageResize extends Construct {
 
     const imagesBucket = new s3.Bucket(this, 'Bucket', s3BucketProps);
 
-    const imageOriginResponseLambda = new lambda.Function(this, 'OriginResponseFunction', {
-      code: lambda.Code.fromAsset(`${__dirname}/../lambda/image-origin-response-function`),
+    const imageOriginResponseLambda = new NodejsFunction(this, 'OriginResponseFunction', {
+      bundling: {
+        forceDockerBundling: true,
+        minify: true,
+        nodeModules: ['sharp'],
+      },
+      entry: `${__dirname}/../lambda/image-origin-response-function/index.js`,
       functionName: 'image-origin-response-function',
-      handler: 'index.handler',
+      handler: 'handler',
       runtime: lambda.Runtime.NODEJS_12_X,
       ...originResponseLambdaProps,
     });

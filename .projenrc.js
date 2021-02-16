@@ -14,6 +14,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-s3',
     '@aws-cdk/core',
+    '@aws-cdk/aws-lambda-nodejs',
   ],
   eslint: true,
   keywords: ['aws-cdk', 'aws', 'cdk', 'cloudfront', 'formatter', 'images', 'lambda', 'lambda@edge', 'resize'],
