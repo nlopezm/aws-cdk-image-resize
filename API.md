@@ -133,7 +133,7 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **cloudfrontDistributionProps**? | <code>[DistributionProps](#aws-cdk-image-resize-distributionprops)</code> | __*Optional*__
-**originResponseLambdaProps**? | <code>[FunctionProps](#aws-cdk-image-resize-functionprops)</code> | __*Optional*__
+**originResponseLambdaProps**? | <code>[NodejsFunctionProps](#aws-cdk-aws-lambda-nodejs-nodejsfunctionprops)</code> | __*Optional*__
 **s3BucketProps**? | <code>[BucketProps](#aws-cdk-aws-s3-bucketprops)</code> | __*Optional*__
 **viewerRequestLambdaProps**? | <code>[FunctionProps](#aws-cdk-image-resize-functionprops)</code> | __*Optional*__
 
