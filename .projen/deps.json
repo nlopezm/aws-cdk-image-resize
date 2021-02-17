@@ -25,10 +25,6 @@
       "type": "build"
     },
     {
-      "name": "esbuild",
-      "type": "build"
-    },
-    {
       "name": "eslint",
       "type": "build"
     },
@@ -91,6 +87,11 @@
       "name": "typescript",
       "version": "^3.9.5",
       "type": "build"
+    },
+    {
+      "name": "esbuild",
+      "version": "^0.8.46",
+      "type": "bundled"
     },
     {
       "name": "@aws-cdk/aws-certificatemanager",
@@ -165,6 +166,11 @@
     {
       "name": "@aws-cdk/core",
       "version": "^1.73.0",
+      "type": "runtime"
+    },
+    {
+      "name": "esbuild",
+      "version": "^0.8.46",
       "type": "runtime"
     }
   ],

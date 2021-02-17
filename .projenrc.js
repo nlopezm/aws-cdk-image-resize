@@ -19,7 +19,8 @@ const project = new AwsCdkConstructLibrary({
   eslint: true,
   keywords: ['aws-cdk', 'aws', 'cdk', 'cloudfront', 'formatter', 'images', 'lambda', 'lambda@edge', 'resize'],
   gitignore: ['cdk.out'],
-  devDeps: ['esbuild'],
+  deps: ['esbuild@^0.8.46'],
+  bundledDeps: ['esbuild@^0.8.46'],
 
   /* AwsCdkConstructLibraryOptions */
   // cdkAssert: true,                                                          /* Install the @aws-cdk/assert library? */
