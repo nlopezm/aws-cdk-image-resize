@@ -25,7 +25,6 @@ export class ImageResize extends Construct {
 
     const imageOriginResponseLambda = new NodejsFunction(this, 'OriginResponseFunction', {
       bundling: {
-        forceDockerBundling: true,
         minify: true,
         nodeModules: ['sharp'],
       },
