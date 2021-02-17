@@ -2373,6 +2373,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+esbuild@^0.8.46:
+  version "0.8.46"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.46.tgz#8fc7230ce3019b12e2553399f0c03875a729c26b"
+  integrity sha512-xck9sXNCNmjDHCCfxTCyhKTiFuEBweh+IDAhMLOJI990v1Fzii6MyIkT1LbkvjgoVgPX2SK1kpi5eZVGNrl8yg==
+
 escalade@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
@@ -4079,9 +4084,9 @@ jsii-diff@^1.20.1:
     yargs "^16.2.0"
 
 jsii-docgen@^1.8.41:
-  version "1.8.41"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.41.tgz#c35ca3fb268654e8d0e9ec276a2139857bad12bb"
-  integrity sha512-/TyJKCLc2LW21MhuPfuvL0zEWyEWuSN2HuJLCsuPNDJNq2rfQamDyFtrRA2LblwIKzqLekb5Uds8GbUhbYlYrQ==
+  version "1.8.45"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.45.tgz#560280ab1ea65232bb3936d475422026f2868914"
+  integrity sha512-MfxFHMkRC5hCCzItfYDpnoTpbpC+EiL8cJhWVWFTY0msy9iYXy1NPfgW8yWAhWvCvCFuGYqtfx/3yQJnxw/ddw==
   dependencies:
     "@jsii/spec" "^1.16.0"
     fs-extra "^9.0.1"
