@@ -3,7 +3,7 @@ import * as origins from '@aws-cdk/aws-cloudfront-origins';
 import * as lambda from '@aws-cdk/aws-lambda';
 import { NodejsFunction, NodejsFunctionProps } from '@aws-cdk/aws-lambda-nodejs';
 import * as s3 from '@aws-cdk/aws-s3';
-import { Construct } from '@aws-cdk/core';
+import { Construct, Duration } from '@aws-cdk/core';
 import { DistributionProps, FunctionProps } from './types';
 export * from './types';
 
@@ -37,6 +37,7 @@ export class ImageResize extends Construct {
       functionName: 'image-origin-response-function',
       handler: 'handler',
       runtime: lambda.Runtime.NODEJS_12_X,
+      timeout: Duration.seconds(15),
       ...originResponseLambdaProps,
     });
 
