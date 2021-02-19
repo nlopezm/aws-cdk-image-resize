@@ -15,15 +15,20 @@ export interface IImageResizeProps {
 }
 
 export class ImageResize extends Construct {
+  distribution: cloudfront.Distribution;
+  imageOriginResponseLambda: NodejsFunction;
+  imagesBucket: s3.Bucket;
+  imageViewerRequestLambda: lambda.Function;
+
   constructor(scope: Construct, id: string, props?: IImageResizeProps) {
     super(scope, id);
 
     const { s3BucketProps, originResponseLambdaProps, viewerRequestLambdaProps, cloudfrontDistributionProps } =
       props || {};
 
-    const imagesBucket = new s3.Bucket(this, 'Bucket', s3BucketProps);
+    this.imagesBucket = new s3.Bucket(this, 'Bucket', s3BucketProps);
 
-    const imageOriginResponseLambda = new NodejsFunction(this, 'OriginResponseFunction', {
+    this.imageOriginResponseLambda = new NodejsFunction(this, 'OriginResponseFunction', {
       bundling: {
         minify: true,
         nodeModules: ['sharp'],
@@ -35,10 +40,10 @@ export class ImageResize extends Construct {
       ...originResponseLambdaProps,
     });
 
-    imagesBucket.grantRead(imageOriginResponseLambda);
-    imagesBucket.grantPut(imageOriginResponseLambda);
+    this.imagesBucket.grantRead(this.imageOriginResponseLambda);
+    this.imagesBucket.grantPut(this.imageOriginResponseLambda);
 
-    const imageViewerRequestLambda = new lambda.Function(this, 'ViewerRequestFunction', {
+    this.imageViewerRequestLambda = new lambda.Function(this, 'ViewerRequestFunction', {
       code: lambda.Code.fromAsset(`${__dirname}/../lambda/image-viewer-request-function`),
       functionName: 'image-viewer-request-function',
       handler: 'index.handler',
@@ -47,18 +52,18 @@ export class ImageResize extends Construct {
     });
 
     // Cloudfront distribution for the S3 bucket.
-    new cloudfront.Distribution(this, 'Distribution', {
+    this.distribution = new cloudfront.Distribution(this, 'Distribution', {
       ...cloudfrontDistributionProps,
       defaultBehavior: {
-        origin: new origins.S3Origin(imagesBucket),
+        origin: new origins.S3Origin(this.imagesBucket),
         edgeLambdas: [
           {
             eventType: cloudfront.LambdaEdgeEventType.ORIGIN_RESPONSE,
-            functionVersion: imageOriginResponseLambda.currentVersion,
+            functionVersion: this.imageOriginResponseLambda.currentVersion,
           },
           {
             eventType: cloudfront.LambdaEdgeEventType.VIEWER_REQUEST,
-            functionVersion: imageViewerRequestLambda.currentVersion,
+            functionVersion: this.imageViewerRequestLambda.currentVersion,
           },
         ],
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,

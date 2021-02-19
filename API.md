@@ -45,6 +45,17 @@ new ImageResize(scope: Construct, id: string, props?: IImageResizeProps)
 
 
 
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**distribution** | <code>[Distribution](#aws-cdk-aws-cloudfront-distribution)</code> | <span></span>
+**imageOriginResponseLambda** | <code>[NodejsFunction](#aws-cdk-aws-lambda-nodejs-nodejsfunction)</code> | <span></span>
+**imageViewerRequestLambda** | <code>[Function](#aws-cdk-aws-lambda-function)</code> | <span></span>
+**imagesBucket** | <code>[Bucket](#aws-cdk-aws-s3-bucket)</code> | <span></span>
+
+
 
 ## struct DistributionProps  <a id="aws-cdk-image-resize-distributionprops"></a>
 
