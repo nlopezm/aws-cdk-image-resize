@@ -52,11 +52,22 @@ export class ImageResize extends Construct {
       ...viewerRequestLambdaProps,
     });
 
+    const cachePolicy = new cloudfront.CachePolicy(this, 'CachePolicy', {
+      cachePolicyName: 'images-cache-policy',
+      defaultTtl: Duration.days(365), // 1 year
+      enableAcceptEncodingBrotli: true,
+      enableAcceptEncodingGzip: true,
+      maxTtl: Duration.days(365 * 2), // 2 years
+      minTtl: Duration.days(30 * 3), // 3 months
+      queryStringBehavior: cloudfront.CacheQueryStringBehavior.allowList('height', 'width'),
+    });
+
     // Cloudfront distribution for the S3 bucket.
     this.distribution = new cloudfront.Distribution(this, 'Distribution', {
       ...cloudfrontDistributionProps,
       defaultBehavior: {
         origin: new origins.S3Origin(this.imagesBucket),
+        cachePolicy,
         edgeLambdas: [
           {
             eventType: cloudfront.LambdaEdgeEventType.ORIGIN_RESPONSE,
