@@ -69,7 +69,7 @@ Name | Type | Description
 **additionalBehaviors**? | <code>Map<string, [BehaviorOptions](#aws-cdk-aws-cloudfront-behavioroptions)></code> | Additional behaviors for the distribution, mapped by the pathPattern that specifies which requests to apply the behavior to.<br/>__*Default*__: no additional behaviors are added.
 **certificate**? | <code>[ICertificate](#aws-cdk-aws-certificatemanager-icertificate)</code> | A certificate to associate with the distribution.<br/>__*Default*__: the CloudFront wildcard certificate (*.cloudfront.net) will be used.
 **comment**? | <code>string</code> | Any comments you want to include about the distribution.<br/>__*Default*__: no comment
-**defaultBehavior**? | <code>[BehaviorOptions](#aws-cdk-aws-cloudfront-behavioroptions)</code> | The default behavior for the distribution.<br/>__*Optional*__
+**defaultBehavior**? | <code>[AddBehaviorOptions](#aws-cdk-aws-cloudfront-addbehavioroptions)</code> | The default behavior for the distribution.<br/>__*Optional*__
 **defaultRootObject**? | <code>string</code> | The object that you want CloudFront to request from your origin (for example, index.html) when a viewer requests the root URL for your distribution. If no default object is set, the request goes to the origin's root (e.g., example.com/).<br/>__*Default*__: no default root object
 **domainNames**? | <code>Array<string></code> | Alternative domain names for this distribution.<br/>__*Default*__: The distribution will only support the default generated name (e.g., d111111abcdef8.cloudfront.net)
 **enableIpv6**? | <code>boolean</code> | Whether CloudFront will respond to IPv6 DNS requests with an IPv6 address.<br/>__*Default*__: true

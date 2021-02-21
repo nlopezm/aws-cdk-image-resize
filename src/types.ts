@@ -1,5 +1,6 @@
 import * as acm from '@aws-cdk/aws-certificatemanager';
 import {
+  AddBehaviorOptions,
   BehaviorOptions,
   ErrorResponse,
   GeoRestriction,
@@ -27,7 +28,7 @@ export interface DistributionProps {
    *
    * @stability stable
    */
-  readonly defaultBehavior?: BehaviorOptions;
+  readonly defaultBehavior?: AddBehaviorOptions;
   /**
    * Additional behaviors for the distribution, mapped by the pathPattern that specifies which requests to apply the behavior to.
    *
