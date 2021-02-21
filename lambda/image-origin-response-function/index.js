@@ -84,7 +84,12 @@ exports.handler = async (event, _context, callback) => {
   // If dimensions passed, resize base image
   if (params.width || params.height) {
     // Allow to pass only one of width or height
-    sharpPromise.resize(params.width || undefined, params.height || undefined);
+    sharpPromise.resize({
+      fit: 'inside',
+      height: params.height || undefined,
+      width: params.width || undefined,
+      withoutEnlargement: true,
+    });
   }
   // If the requested extension is different than the base image extension, then
   // format it to the new extension
