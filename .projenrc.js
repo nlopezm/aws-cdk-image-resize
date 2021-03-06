@@ -54,7 +54,8 @@ const project = new AwsCdkConstructLibrary({
   // bin: undefined,                                                           /* Binary programs vended with your module. */
   // bundledDeps: undefined,                                                   /* List of dependencies to bundle into this module. */
   // deps: [],                                                                 /* Runtime dependencies of this module. */
-  // description: undefined,                                                   /* The description is just a string that helps people understand the purpose of the package. */
+  description:
+    'AWS CDK construct to easily setup the required arquitecture to serve performant responsive images.' /* The description is just a string that helps people understand the purpose of the package. */,
   // devDeps: [],                                                              /* Build dependencies for this module. */
   // entrypoint: 'lib/index.js',                                               /* Module entrypoint (`main` in `package.json`). */
   // homepage: undefined,                                                      /* Package's Homepage / Website. */
