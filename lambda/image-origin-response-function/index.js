@@ -112,5 +112,6 @@ exports.handler = async (event, _context, callback) => {
   response.body = buffer.toString('base64');
   response.bodyEncoding = 'base64';
   response.headers['content-type'] = [{ key: 'Content-Type', value: 'image/' + params.extension }];
+  response.headers['cache-control'] = [{ key: 'Cache-Control', value: 'max-age=31536000' }];
   callback(null, response);
 };
