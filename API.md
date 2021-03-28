@@ -99,6 +99,7 @@ Name | Type | Description
 **allowAllOutbound**? | <code>boolean</code> | Whether to allow the Lambda to send all network traffic.<br/>__*Default*__: true
 **allowPublicSubnet**? | <code>boolean</code> | Lambda Functions in a public subnet can NOT access the internet.<br/>__*Default*__: false
 **code**? | <code>[Code](#aws-cdk-aws-lambda-code)</code> | The source code of your Lambda function.<br/>__*Optional*__
+**codeSigningConfig**? | <code>[ICodeSigningConfig](#aws-cdk-aws-lambda-icodesigningconfig)</code> | Code signing config associated with this function.<br/>__*Default*__: Not Sign the Code
 **currentVersionOptions**? | <code>[VersionOptions](#aws-cdk-aws-lambda-versionoptions)</code> | Options for the `lambda.Version` resource automatically created by the `fn.currentVersion` method.<br/>__*Default*__: default options as described in `VersionOptions`
 **deadLetterQueue**? | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | The SQS queue to use if DLQ is enabled.<br/>__*Default*__: SQS queue with 14 day retention period if `deadLetterQueueEnabled` is `true`
 **deadLetterQueueEnabled**? | <code>boolean</code> | Enabled DLQ.<br/>__*Default*__: false unless `deadLetterQueue` is set, which implies DLQ is enabled.
