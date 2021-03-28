@@ -62,11 +62,14 @@ export class ImageResize extends Construct {
       queryStringBehavior: cloudfront.CacheQueryStringBehavior.allowList('height', 'width'),
     });
 
+    const originAccessIdentity = new cloudfront.OriginAccessIdentity(this, 'OAI');
+    this.imagesBucket.grantRead(originAccessIdentity);
+
     // Cloudfront distribution for the S3 bucket.
     this.distribution = new cloudfront.Distribution(this, 'Distribution', {
       ...cloudfrontDistributionProps,
       defaultBehavior: {
-        origin: new origins.S3Origin(this.imagesBucket),
+        origin: new origins.S3Origin(this.imagesBucket, { originAccessIdentity }),
         cachePolicy,
         edgeLambdas: [
           {
