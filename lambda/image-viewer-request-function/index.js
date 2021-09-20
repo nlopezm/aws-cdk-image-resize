@@ -3,6 +3,8 @@
 
 const querystring = require('querystring');
 
+const SKIPPED_EXTENSIONS = ['svg'];
+
 const WEBP = 'webp';
 const regex = /(.*)\.([^.]*)$/;
 
@@ -24,6 +26,9 @@ exports.getDataFromRequest = request => {
   // read the accept header to determine if webp is supported.
   const accept = headers['accept'] ? headers['accept'][0].value : '';
 
+  // Don't modify the extension if it is skipped
+  if (SKIPPED_EXTENSIONS.includes(extension)) return { extension, prefix };
+
   // check support for webp
   if (accept.includes(WEBP)) extension = WEBP;
 
@@ -38,6 +43,12 @@ exports.handler = (event, _context, callback) => {
   if (!request.uri.match(regex)) return callback(null, request);
 
   const { extension, prefix } = this.getDataFromRequest(request);
+
+  // Don't do any formatting for skipped extensions
+  if (SKIPPED_EXTENSIONS.includes(extension)) {
+    callback(null, request);
+    return;
+  }
 
   // parse the querystrings key-value pairs. In our case it would be d=100x100
   let { height, width } = querystring.parse(request.querystring);
