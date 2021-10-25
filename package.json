@@ -3,7 +3,7 @@
   "description": "AWS CDK construct to easily setup the required arquitecture to serve performant responsive images.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nlopezm/aws-cdk-image-resize.git"
+    "url": "https://github.com/sesamyab/aws-cdk-image-resize"
   },
   "scripts": {
     "clobber": "npx projen clobber",
@@ -29,7 +29,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.111.0",
+    "@aws-cdk/assert": "1.129.0",
     "@types/jest": "^26.0.20",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
@@ -51,23 +51,23 @@
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-certificatemanager": "1.111.0",
-    "@aws-cdk/aws-cloudfront": "1.111.0",
-    "@aws-cdk/aws-cloudfront-origins": "1.111.0",
-    "@aws-cdk/aws-lambda": "1.111.0",
-    "@aws-cdk/aws-lambda-nodejs": "1.111.0",
-    "@aws-cdk/aws-s3": "1.111.0",
-    "@aws-cdk/core": "1.111.0",
+    "@aws-cdk/aws-certificatemanager": "1.129.0",
+    "@aws-cdk/aws-cloudfront": "1.129.0",
+    "@aws-cdk/aws-cloudfront-origins": "1.129.0",
+    "@aws-cdk/aws-lambda": "1.129.0",
+    "@aws-cdk/aws-lambda-nodejs": "1.129.0",
+    "@aws-cdk/aws-s3": "1.129.0",
+    "@aws-cdk/core": "1.129.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-certificatemanager": "1.111.0",
-    "@aws-cdk/aws-cloudfront": "1.111.0",
-    "@aws-cdk/aws-cloudfront-origins": "1.111.0",
-    "@aws-cdk/aws-lambda": "1.111.0",
-    "@aws-cdk/aws-lambda-nodejs": "1.111.0",
-    "@aws-cdk/aws-s3": "1.111.0",
-    "@aws-cdk/core": "1.111.0",
+    "@aws-cdk/aws-certificatemanager": "1.129.0",
+    "@aws-cdk/aws-cloudfront": "1.129.0",
+    "@aws-cdk/aws-cloudfront-origins": "1.129.0",
+    "@aws-cdk/aws-lambda": "1.129.0",
+    "@aws-cdk/aws-lambda-nodejs": "1.129.0",
+    "@aws-cdk/aws-s3": "1.129.0",
+    "@aws-cdk/core": "1.129.0",
     "esbuild": "^0.8.46"
   },
   "bundledDependencies": [
@@ -87,6 +87,9 @@
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.18",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",

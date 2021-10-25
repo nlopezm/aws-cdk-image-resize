@@ -1,27 +1,37 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { AwsCdkConstructLibrary } = require("projen");
 
 const project = new AwsCdkConstructLibrary({
-  author: 'nlopezm',
-  cdkVersion: '1.111.0',
-  defaultReleaseBranch: 'main',
-  jsiiFqn: 'projen.AwsCdkConstructLibrary',
-  name: 'aws-cdk-image-resize',
-  repositoryUrl: 'https://github.com/nlopezm/aws-cdk-image-resize.git',
+  author: "nlopezm",
+  cdkVersion: "1.129.0",
+  defaultReleaseBranch: "main",
+  jsiiFqn: "projen.AwsCdkConstructLibrary",
+  name: "aws-cdk-image-resize",
+  repositoryUrl: "https://github.com/sesamyab/aws-cdk-image-resize",
   cdkVersionPinning: true,
   cdkDependencies: [
-    '@aws-cdk/aws-cloudfront-origins',
-    '@aws-cdk/aws-certificatemanager',
-    '@aws-cdk/aws-cloudfront',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-s3',
-    '@aws-cdk/core',
-    '@aws-cdk/aws-lambda-nodejs',
+    "@aws-cdk/aws-cloudfront-origins",
+    "@aws-cdk/aws-certificatemanager",
+    "@aws-cdk/aws-cloudfront",
+    "@aws-cdk/aws-lambda",
+    "@aws-cdk/aws-s3",
+    "@aws-cdk/core",
+    "@aws-cdk/aws-lambda-nodejs",
   ],
   eslint: true,
-  keywords: ['aws-cdk', 'aws', 'cdk', 'cloudfront', 'formatter', 'images', 'lambda', 'lambda@edge', 'resize'],
-  gitignore: ['cdk.out'],
-  deps: ['esbuild@^0.8.46'],
-  bundledDeps: ['esbuild@^0.8.46'],
+  keywords: [
+    "aws-cdk",
+    "aws",
+    "cdk",
+    "cloudfront",
+    "formatter",
+    "images",
+    "lambda",
+    "lambda@edge",
+    "resize",
+  ],
+  gitignore: ["cdk.out"],
+  deps: ["esbuild@^0.8.46"],
+  bundledDeps: ["esbuild@^0.8.46"],
 
   /* AwsCdkConstructLibraryOptions */
   // cdkAssert: true,                                                          /* Install the @aws-cdk/assert library? */
@@ -55,7 +65,7 @@ const project = new AwsCdkConstructLibrary({
   // bundledDeps: undefined,                                                   /* List of dependencies to bundle into this module. */
   // deps: [],                                                                 /* Runtime dependencies of this module. */
   description:
-    'AWS CDK construct to easily setup the required arquitecture to serve performant responsive images.' /* The description is just a string that helps people understand the purpose of the package. */,
+    "AWS CDK construct to easily setup the required arquitecture to serve performant responsive images." /* The description is just a string that helps people understand the purpose of the package. */,
   // devDeps: [],                                                              /* Build dependencies for this module. */
   // entrypoint: 'lib/index.js',                                               /* Module entrypoint (`main` in `package.json`). */
   // homepage: undefined,                                                      /* Package's Homepage / Website. */
@@ -66,7 +76,8 @@ const project = new AwsCdkConstructLibrary({
   // minNodeVersion: undefined,                                                /* Minimum Node.js version to require via package.json `engines` (inclusive). */
   // npmAccess: undefined,                                                     /* Access level of the npm package. */
   // npmDistTag: 'latest',                                                     /* Tags can be used to provide an alias instead of version numbers. */
-  // npmRegistryUrl: 'https://registry.npmjs.org',                             /* The base URL of the npm package registry. */
+  npmRegistryUrl:
+    "https://npm.pkg.github.com" /* The base URL of the npm package registry. */,
   // npmTaskExecution: NpmTaskExecution.PROJEN,                                /* Determines how tasks are executed when invoked as npm scripts (yarn/npm run xyz). */
   // packageManager: NodePackageManager.YARN,                                  /* The Node Package Manager used to execute scripts. */
   // packageName: undefined,                                                   /* The "name" in package.json. */
