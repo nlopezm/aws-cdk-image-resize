@@ -98,6 +98,8 @@ Name | Type | Description
 -----|------|-------------
 **allowAllOutbound**? | <code>boolean</code> | Whether to allow the Lambda to send all network traffic.<br/>__*Default*__: true
 **allowPublicSubnet**? | <code>boolean</code> | Lambda Functions in a public subnet can NOT access the internet.<br/>__*Default*__: false
+**architecture**? | <code>[Architecture](#aws-cdk-aws-lambda-architecture)</code> | The system architectures compatible with this lambda function.<br/>__*Default*__: Architecture.X86_64
+**architectures**?⚠️ | <code>Array<[Architecture](#aws-cdk-aws-lambda-architecture)></code> | DEPRECATED.<br/>__*Default*__: [Architecture.X86_64]
 **code**? | <code>[Code](#aws-cdk-aws-lambda-code)</code> | The source code of your Lambda function.<br/>__*Optional*__
 **codeSigningConfig**? | <code>[ICodeSigningConfig](#aws-cdk-aws-lambda-icodesigningconfig)</code> | Code signing config associated with this function.<br/>__*Default*__: Not Sign the Code
 **currentVersionOptions**? | <code>[VersionOptions](#aws-cdk-aws-lambda-versionoptions)</code> | Options for the `lambda.Version` resource automatically created by the `fn.currentVersion` method.<br/>__*Default*__: default options as described in `VersionOptions`
@@ -111,6 +113,7 @@ Name | Type | Description
 **functionName**? | <code>string</code> | A name for the function.<br/>__*Default*__: AWS CloudFormation generates a unique physical ID and uses that ID for the function's name. For more information, see Name Type.
 **handler**? | <code>string</code> | The name of the method within your code that Lambda calls to execute your function.<br/>__*Optional*__
 **initialPolicy**? | <code>Array<[PolicyStatement](#aws-cdk-aws-iam-policystatement)></code> | Initial policy statements to add to the created Lambda Role.<br/>__*Default*__: No policy statements are added to the created Lambda role.
+**insightsVersion**? | <code>[LambdaInsightsVersion](#aws-cdk-aws-lambda-lambdainsightsversion)</code> | Specify the version of CloudWatch Lambda insights to use for monitoring.<br/>__*Default*__: No Lambda Insights
 **layers**? | <code>Array<[ILayerVersion](#aws-cdk-aws-lambda-ilayerversion)></code> | A list of layers to add to the function's execution environment.<br/>__*Default*__: No layers.
 **logRetention**? | <code>[RetentionDays](#aws-cdk-aws-logs-retentiondays)</code> | The number of days log events are kept in CloudWatch Logs.<br/>__*Default*__: logs.RetentionDays.INFINITE
 **logRetentionRetryOptions**? | <code>[LogRetentionRetryOptions](#aws-cdk-aws-lambda-logretentionretryoptions)</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group.<br/>__*Default*__: Default AWS SDK retry options.
