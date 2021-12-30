@@ -52,15 +52,18 @@ export class ImageResize extends Construct {
       ...viewerRequestLambdaProps,
     });
 
-    const cachePolicy = new cloudfront.CachePolicy(this, 'CachePolicy', {
-      cachePolicyName: 'images-cache-policy',
-      defaultTtl: Duration.days(365), // 1 year
-      enableAcceptEncodingBrotli: true,
-      enableAcceptEncodingGzip: true,
-      maxTtl: Duration.days(365 * 2), // 2 years
-      minTtl: Duration.days(30 * 3), // 3 months
-      queryStringBehavior: cloudfront.CacheQueryStringBehavior.allowList('height', 'width'),
-    });
+    const cachePolicy = (() => {
+      if (cloudfrontDistributionProps?.defaultBehavior?.cachePolicy) return {};
+      return new cloudfront.CachePolicy(this, 'CachePolicy', {
+        cachePolicyName: 'images-cache-policy',
+        defaultTtl: core_1.Duration.days(365),
+        enableAcceptEncodingBrotli: true,
+        enableAcceptEncodingGzip: true,
+        maxTtl: core_1.Duration.days(365 * 2),
+        minTtl: core_1.Duration.days(30 * 3),
+        queryStringBehavior: cloudfront.CacheQueryStringBehavior.allowList('height', 'width'),
+      })
+    })();
 
     const originAccessIdentity = new cloudfront.OriginAccessIdentity(this, 'OAI');
     this.imagesBucket.grantRead(originAccessIdentity);
