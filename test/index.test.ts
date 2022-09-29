@@ -1,4 +1,4 @@
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
 import { ImageResize } from '../src';
 import '@aws-cdk/assert/jest';
 
