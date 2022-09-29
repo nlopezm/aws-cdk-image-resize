@@ -255,19 +255,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@aws-cdk/aws-certificatemanager,@aws-cdk/aws-cloudfront-origins,@aws-cdk/aws-cloudfront,@aws-cdk/aws-lambda-nodejs,@aws-cdk/aws-lambda,@aws-cdk/aws-s3,@aws-cdk/core,@aws-cdk/assert,@aws-cdk/assertions'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='@aws-cdk/aws-certificatemanager,@aws-cdk/aws-cloudfront-origins,@aws-cdk/aws-cloudfront,@aws-cdk/aws-lambda-nodejs,@aws-cdk/aws-lambda,@aws-cdk/aws-s3,@aws-cdk/core,@aws-cdk/assert,@aws-cdk/assertions'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='@aws-cdk/aws-certificatemanager,@aws-cdk/aws-cloudfront-origins,@aws-cdk/aws-cloudfront,@aws-cdk/aws-lambda-nodejs,@aws-cdk/aws-lambda,@aws-cdk/aws-s3,@aws-cdk/core,@aws-cdk/assert,@aws-cdk/assertions'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='@aws-cdk/aws-certificatemanager,@aws-cdk/aws-cloudfront-origins,@aws-cdk/aws-cloudfront,@aws-cdk/aws-lambda-nodejs,@aws-cdk/aws-lambda,@aws-cdk/aws-s3,@aws-cdk/core,@aws-cdk/assert,@aws-cdk/assertions'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='@aws-cdk/aws-certificatemanager,@aws-cdk/aws-cloudfront-origins,@aws-cdk/aws-cloudfront,@aws-cdk/aws-lambda-nodejs,@aws-cdk/aws-lambda,@aws-cdk/aws-s3,@aws-cdk/core,@aws-cdk/assert,@aws-cdk/assertions'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='aws-cdk-lib,constructs'"
         },
         {
           "exec": "yarn install --check-files"
