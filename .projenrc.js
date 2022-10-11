@@ -1,22 +1,13 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { awscdk } = require('projen');
 
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
   author: 'nlopezm',
-  cdkVersion: '1.132.0',
+  cdkVersion: '2.44.0',
   defaultReleaseBranch: 'main',
   jsiiFqn: 'projen.AwsCdkConstructLibrary',
   name: 'aws-cdk-image-resize',
   repositoryUrl: 'https://github.com/nlopezm/aws-cdk-image-resize.git',
   cdkVersionPinning: true,
-  cdkDependencies: [
-    '@aws-cdk/aws-cloudfront-origins',
-    '@aws-cdk/aws-certificatemanager',
-    '@aws-cdk/aws-cloudfront',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-s3',
-    '@aws-cdk/core',
-    '@aws-cdk/aws-lambda-nodejs',
-  ],
   eslint: true,
   keywords: ['aws-cdk', 'aws', 'cdk', 'cloudfront', 'formatter', 'images', 'lambda', 'lambda@edge', 'resize'],
   gitignore: ['cdk.out'],

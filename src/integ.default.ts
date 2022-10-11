@@ -1,4 +1,4 @@
-import { App, RemovalPolicy, Stack } from '@aws-cdk/core';
+import { App, RemovalPolicy, Stack } from 'aws-cdk-lib';
 import { ImageResize } from './index';
 
 const app = new App();

@@ -1,4 +1,4 @@
-import * as acm from '@aws-cdk/aws-certificatemanager';
+import * as acm from 'aws-cdk-lib/aws-certificatemanager';
 import {
   AddBehaviorOptions,
   BehaviorOptions,
@@ -7,9 +7,9 @@ import {
   HttpVersion,
   PriceClass,
   SecurityPolicyProtocol,
-} from '@aws-cdk/aws-cloudfront';
-import { Code, FunctionOptions, Runtime } from '@aws-cdk/aws-lambda';
-import * as s3 from '@aws-cdk/aws-s3';
+} from 'aws-cdk-lib/aws-cloudfront';
+import { Code, FunctionOptions, Runtime } from 'aws-cdk-lib/aws-lambda';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 
 /**
  * Unfortunately, we can't use Partial<DistributionProps> because JSII breaks
